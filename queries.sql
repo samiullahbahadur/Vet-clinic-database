@@ -1,5 +1,5 @@
 /*Queries that provide answers to the questions from all projects.*/
-SELECT *
+SELECT name
 FROM animals
 WHERE NAME LIKE '%mon';
 
