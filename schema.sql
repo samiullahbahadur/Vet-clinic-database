@@ -13,3 +13,5 @@ CREATE TABLE
   );
 
 
+ALTER TABLE animals
+ADD COLUMN species VARCHAR(128);
