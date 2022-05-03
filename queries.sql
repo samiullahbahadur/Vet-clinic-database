@@ -52,3 +52,10 @@ ROLLBACK;
 
 -- this will show that the table exists
 \d animals
+
+BEGIN;
+DELETE
+FROM animals
+WHERE date_of_birth > 'January 1, 2022';
+SAVEPOINT younger_deleted;
+
