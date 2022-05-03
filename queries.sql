@@ -49,3 +49,6 @@ BEGIN
 DELETE
 FROM animals;
 ROLLBACK;
+
+-- this will show that the table exists
+\d animals

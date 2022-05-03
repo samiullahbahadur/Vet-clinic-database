@@ -94,7 +94,7 @@ INSERT INTO
     date_of_birth,
     escape_attempts,
     neutered,
-    t t weight_kg
+     weight_kg
   )
 VALUES ('Blossom', 'October 13, 1998', 3, TRUE, 17);
 
