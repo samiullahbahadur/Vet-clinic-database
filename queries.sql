@@ -40,15 +40,27 @@ SELECT * FROM animals;
 ROLLBACK;
 SELECT * FROM animals
 
+BEGIN;
+UPDATE animals
+SET species = 'digimon'
+WHERE name LIKE '%mon';
+UPDATE animals
+SET species = 'pokemon'
+WHERE species IS NULL;
+COMMIT;
+SELECT * FROM animals;
+
 UPDATE animals
 SET species = 'pokemon';
 COMMIT;
 SELECT * FROM animals;
 
+
 BEGIN
 DELETE
 FROM animals;
 ROLLBACK;
+SELECT * FROM animals;
 
 -- this will show that the table exists
 \d animals
