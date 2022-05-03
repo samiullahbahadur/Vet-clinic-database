@@ -41,5 +41,11 @@ ROLLBACK;
 SELECT * FROM animals
 
 UPDATE animals
-SET species = 'pokemon'
+SET species = 'pokemon';
 COMMIT;
+SELECT * FROM animals;
+
+BEGIN
+DELETE
+FROM animals;
+ROLLBACK;
