@@ -33,3 +33,5 @@ CREATE TABLE
 
   ALTER TABLE animals DROP COLUMN IF EXISTS species;
 
+ALTER TABLE animals
+ADD COLUMN species_id INT;
