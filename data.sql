@@ -116,3 +116,25 @@ VALUES ('Sam Smith', 34),
 ('Melody Pond', 77),
  ('Dean Winchester', 14),
 ('Jodie Whittaker', 38);
+
+INSERT INTO species (NAME)
+VALUES ('Pokemon'),
+ ('Digimon');
+
+ 
+BEGIN;
+
+UPDATE animals
+SET species_id = CASE
+    WHEN NAME LIKE '%mon'
+    THEN (
+      SELECT id
+      FROM species
+      WHERE NAME = 'Digimon'
+    )
+    ELSE (
+      SELECT id
+      FROM species
+      WHERE NAME = 'Pokemon'
+    )
+  END;
