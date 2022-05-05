@@ -131,3 +131,8 @@ LIMIT 1;
 SELECT count(*) FROM animals
 INNER JOIN visits ON id = animals_id
 WHERE vets_id = (SELECT id FROM vets WHERE name = 'Stephanie Mendez');
+
+-- List all vets and their specialties, including vets with no specialties.
+SELECT vets.name, (SELECT name as specialization FROM species 
+				   WHERE specializations.species_id = species.id) FROM vets
+LEFT JOIN specializations ON vets.id = specializations.vets_id;
