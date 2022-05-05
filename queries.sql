@@ -118,3 +118,11 @@ SELECT animals.name AS animal
 FROM animals
 JOIN owners ON owner_id = owners.id
 WHERE animals.escape_attempts = 0 AND owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester');
+
+
+-- Who was the last animal seen by William Tatcher?
+SELECT animals.name, visits.date_of_visit FROM animals
+INNER JOIN visits ON animals.id = visits.animals_id
+WHERE visits.vets_id = (SELECT id FROM vets WHERE name = 'William Tatcher')
+ORDER BY visits.date_of_visit DESC
+LIMIT 1;
