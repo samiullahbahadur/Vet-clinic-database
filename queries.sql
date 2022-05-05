@@ -148,3 +148,34 @@ LEFT JOIN visits ON animals.id = visits.animals_id
 GROUP BY animals.name
 ORDER BY visit_count DESC
 LIMIT 1;
+
+-- Who was Maisy Smith's first visit?
+SELECT name FROM animals
+LEFT JOIN visits ON animals.id = visits.animals_id
+ORDER BY date_of_visit
+LIMIT 1;
+
+-- Details for most recent visit: animal information, vet information, and date of visit.
+SELECT 
+    animals.*,
+    vets.*
+FROM animals
+INNER JOIN visits ON animals.id = visits.animals_id
+INNER JOIN vets ON vets.id = visits.vets_id
+ORDER BY visits.date_of_visit
+LIMIT 1;
+
+
+-- What specialty should Maisy Smith consider getting?
+CREATE VIEW Maisy_top_visit AS
+SELECT visits.animals_id, count(vets.name) AS number_of_visits  FROM vets
+LEFT JOIN visits ON visits.vets_id = vets.id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY visits.animals_id
+ORDER BY number_of_visits DESC
+LIMIT 1;
+
+ select * from  Maisy_top_visit ;
+
+SELECT animals.name FROM animals
+WHERE animals.id = (SELECT animals_id FROM Maisy_top_visit);
