@@ -80,5 +80,7 @@ CREATE TABLE
 ALTER TABLE visits
 ADD COLUMN date_of_visit DATE;
 
+ALTER TABLE visits
+DROP CONSTRAINT visits_pkey;
 
 
