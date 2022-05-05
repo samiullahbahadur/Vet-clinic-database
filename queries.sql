@@ -121,8 +121,13 @@ WHERE animals.escape_attempts = 0 AND owner_id = (SELECT id FROM owners WHERE fu
 
 
 -- Who was the last animal seen by William Tatcher?
-SELECT animals.name, visits.date_of_visit FROM animals
-INNER JOIN visits ON animals.id = visits.animals_id
-WHERE visits.vets_id = (SELECT id FROM vets WHERE name = 'William Tatcher')
-ORDER BY visits.date_of_visit DESC
+SELECT name, date_of_visit FROM animals
+ JOIN visits ON animals.id = visits.animals_id
+WHERE vets_id = (SELECT id FROM vets WHERE name = 'William Tatcher')
+ORDER BY date_of_visit DESC
 LIMIT 1;
+
+-- How many different animals did Stephanie Mendez see?
+SELECT count(*) FROM animals
+INNER JOIN visits ON id = animals_id
+WHERE vets_id = (SELECT id FROM vets WHERE name = 'Stephanie Mendez');
