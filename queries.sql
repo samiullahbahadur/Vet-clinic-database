@@ -141,3 +141,10 @@ LEFT JOIN specializations ON vets.id = specializations.vets_id;
 SELECT animals.name FROM animals
 LEFT JOIN visits ON animals.id = visits.animals_id
 WHERE visits.date_of_visit BETWEEN 'April 1, 2020' AND 'August 30, 2020';
+
+-- What animal has the most visits to vets?
+SELECT animals.name, count(visits.date_of_visit) AS visit_count  FROM animals
+LEFT JOIN visits ON animals.id = visits.animals_id
+GROUP BY animals.name
+ORDER BY visit_count DESC
+LIMIT 1;
