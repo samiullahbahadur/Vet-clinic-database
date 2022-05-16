@@ -121,3 +121,5 @@ WHERE animals.escape_attempts = 0 AND owner_id = (SELECT id FROM owners WHERE fu
 
 
 explain analyse SELECT COUNT(*) FROM visits where animals_id=4
+
+SELECT * FROM visits where vet_id = 2;
