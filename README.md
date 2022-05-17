@@ -19,7 +19,6 @@ This repository includes files with plain SQL that can be used to recreate a dat
 👤 **Smiullah Bahadur**
 
 - GitHub: [@Bahadur](https://github.com/samiullahbahadur)
-- 
 - LinkedIn: [@Bahadur](https://www.linkedin.com/in/samiullah-bahadur/)
 
 ## 🤝 Contributing
