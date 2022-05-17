@@ -118,3 +118,10 @@ SELECT animals.name AS animal
 FROM animals
 JOIN owners ON owner_id = owners.id
 WHERE animals.escape_attempts = 0 AND owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester');
+
+
+explain analyse SELECT COUNT(*) FROM visits where animals_id=4
+
+SELECT * FROM visits where vet_id = 2;
+
+SELECT * FROM owners where email = 'owner_18327@mail.com';
