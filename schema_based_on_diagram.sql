@@ -1,4 +1,4 @@
-/* create patients table */
+-- create patients table 
 CREATE TABLE patients(
 	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	name CHAR(255),
@@ -9,8 +9,9 @@ CREATE TABLE patients(
 CREATE TABLE medical_histories(
 	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	admitted_at TIME,
-	patient_id INT FOREIGN KEY REFERENCES patients(id),
-	status CHAR(255)
+	patient_id INT ,
+	status CHAR(255),
+    FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
 -- create invoices table
