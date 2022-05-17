@@ -14,12 +14,18 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - [data.sql](./data.sql) to populate tables with sample data.
 - [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database.
 
-## About me
+## About The Authors
 
 👤 **Smiullah Bahadur**
 
 - GitHub: [@Bahadur](https://github.com/samiullahbahadur)
 - LinkedIn: [@Bahadur](https://www.linkedin.com/in/samiullah-bahadur/)
+
+👤 **Chia Carlyle**
+
+- GitHub: [@carlylechia](https://github.com/carlylechia)
+- Twitter: [@chiacarlyle](https://twitter.com/chiacarlyle)
+- LinkedIn: [chia-carlyle](https://linkedin.com/in/chia-carlyle)
 
 ## 🤝 Contributing
 
