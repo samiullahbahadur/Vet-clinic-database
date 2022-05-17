@@ -21,3 +21,11 @@ CREATE TABLE invoices(
 	payed_at TIME,
 	medical_history_id INT FOREIGN KEY REFERENCES medical_histories(id)
 );
+
+
+-- create treatments table
+CREATE TABLE treatments(
+	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	type CHAR(255),
+	name CHAR(255)
+);
