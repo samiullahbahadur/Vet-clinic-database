@@ -12,3 +12,12 @@ CREATE TABLE medical_histories(
 	patient_id INT FOREIGN KEY REFERENCES patients(id),
 	status CHAR(255)
 );
+
+-- create invoices table
+CREATE TABLE invoices(
+	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	total_amount DECIMAL,
+	generated_at TIME,
+	payed_at TIME,
+	medical_history_id INT FOREIGN KEY REFERENCES medical_histories(id)
+);
