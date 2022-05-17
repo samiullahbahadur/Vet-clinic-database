@@ -29,3 +29,12 @@ CREATE TABLE treatments(
 	type CHAR(255),
 	name CHAR(255)
 );
+
+
+-- add table relationships
+-- create a "join table" called hospitalizations for the medical_histories and treatments tables
+CREATE TABLE hospitalizations(
+    ID int PRIMARY KEY ALWAYS as IDENTITY,
+	medical_history_id INT FOREIGN KEY REFERENCES medical_histories(id),
+	treatment_id INT FOREIGN KEY REFERENCES treatments(id)
+);
