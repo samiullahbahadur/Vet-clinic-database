@@ -4,7 +4,7 @@
 
 ## Diagram
 
-![ERD](./schema_diagram.png)
+![ERD](./hospital_diagram.png)
 
 ## Getting Started
 
